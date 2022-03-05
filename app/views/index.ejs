@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/3b9df9abd7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $('#goMatters').click(function(){
+          window.location.href = '/identify'
+        });
+      });
+    </script>
+  
+</head>
+
+<body>
+      <div id="login-button">
+       
+        <img id="goMatters" src="./img/mentor.png">
+        </img>
+      </div>
+
+      <div id="container">
+          <!--if has a content inside the validation-->
+          <% if(validation.length > 0) { %>
+            <div>
+              <strong style="color: red">Attencion!</strong>
+              <ul>
+                <% for(let i = 0; i < validation.length; i++) { %>
+                  <li style="color: red"><%=validation[i].msg %></li>
+                <% } %>
+              </ul>
+            </div>
+          <% } %>
+
+        <h1>Log In</h1>
+        <span class="close-btn">
+          <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+        </span>
+        <form action="/authenticate" method="post">
+          <input type="text" name="user" placeholder="User">
+          <input type="password" name="password" placeholder="Password">
+          <button id="login" type="submit">Log in</button>
+          <a href="/users">Register</a>
+          <div id="remember-container">
+            <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked"/>
+            <span id="remember">Remember me</span>
+            <span id="forgotten">Forgotten password</span>
+          </div>
+      </form>
+      </div>
+      <!-- Forgotten Password Container -->
+      <div id="forgotten-container">
+         <h1>Forgotten</h1>
+        <span class="close-btn">
+          <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+        </span>
+      
+        <form>
+          <input type="email" name="email" placeholder="E-mail">
+          <a href="#" class="orange-btn">Get new password</a>
+      </form>
+      </div>
+      <script src="js/file.js"></script>
+</body>
+
+
+</html>

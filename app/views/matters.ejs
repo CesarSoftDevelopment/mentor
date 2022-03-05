@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0337f2a5b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/new_style.css">
+
+    <title>Matters</title>
+
+    <script>
+
+    $(document).ready(function(){
+      $('#btn_matters').click(function(){
+       
+      $.ajax({
+        url: '/mattersform',
+        method: 'get',
+        success: function(data) {
+          $('#actions').html(data);
+          
+        }
+      })
+    });
+  });
+    </script>
+
+
+  </head>
+  <body id="body">
+      <div style="float: right; margin-right: 79px;">
+        <button id="btn_matters" class="btn "><i class="fas fa-plus"></i></button>
+      </div>
+    <aside class="sidebar">
+      <div class="toggle">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+
+      </div>
+      
+      
+      <div class="side-inner">
+
+        <div class="profile">
+          <img src="img/avatar.png" alt="Image" class="img-fluid">
+          <h3 class="name">Cesar</h3>
+          <span class="country">Desenvolvedor</span>
+        </div>
+
+        
+        <div class="nav-menu">
+          <ul>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne">
+                <div>
+                  <ul>
+                    <li><a href="#">Interior</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Travel</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </li>
+            <li><a href="/"><span class="icon-home mr-3"></span>Home</a></li>
+            <li><a href="/leave"><span class="icon-sign-out mr-3"></span>Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    </aside>
+    <main>
+      <div class="site-section">
+        <div id="actions" class="container">
+          <div  class="row justify-content-center">
+
+            <div class="col-md-12">
+              <div  class="row">
+
+                <div class="card spacing">
+                  <img src="img/img1.jpeg" alt="Avatar" class="img-fluid">
+                  <div class="container">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                  </div>
+                </div>
+                
+                <div class="card spacing">
+                  <img src="img/img2.png" alt="Avatar" style="width:100%">
+                  <div class="container">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                  </div>
+                </div>
+
+                <div class="card spacing">
+                  <img src="img/img33.png" alt="Avatar">
+                  <div class="container">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                  </div>
+                </div>
+
+                <div class="card spacing">
+                  <img src="img/img44.png" alt="Avatar" style="width:100%">
+                  <div class="container">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                  </div>
+                </div>
+
+                <div class="card spacing">
+                  <img src="img/img55.jpg" alt="Avatar" style="width:100%">
+                  <div class="container">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>  
+    </main>
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

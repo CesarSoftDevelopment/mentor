@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Mentor</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+
+
+	</head>
+
+	<body class="body-index">
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<form class="form-inline form-entrar">
+					<div class="form-group">				
+						<a href="/"><button type="button" class="btn btn-success" style="margin-top: 10px;">Voltar</button></a>
+					</div>
+				</form>
+			</div>
+			
+		</nav>
+
+	    <div class="container">
+
+			<% if(validation.length > 0) { %>
+				<div class="alert alert-danger">
+					<strong>Attenction!</strong>
+					<ul>
+						<% for(let i = 0; i < validation.length; i++) { %>
+							<li><%=validation[i].msg %></li>
+						<% } %>
+					</ul>
+				</div>
+				<% } %>
+
+			<form class="form-cadastro" action="/usersrg" method="post">
+			
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="name" class="col-sm-2 col-form-label">Name</label>
+							<input type="text" value="" class="form-control" id="name" name="name" placeholder="Name">
+						</div>
+					</div>
+					
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="user" class="col-sm-2 col-form-label">User</label>
+							<input type="text" value="" class="form-control" id="user" name="user" placeholder="User">
+						</div>
+					</div>
+					
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="password" class="col-sm-2 col-form-label">Password</label>
+							<input type="password" value="" class="form-control" id="password" name="password" placeholder="Password">
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="email" class="col-sm-2 col-form-label">Email</label>
+							<input type="email" value="" class="form-control" id="email" name="email" placeholder="Email">
+						</div>
+					</div>
+
+				</div>
+				
+				<div class="form-group row">
+				
+        			<div class="col-xs-2">
+        				<img src="img/sex_feminine.png" class="img-responsive img-radio" >
+						<center>
+							<input type="radio" id="left-item" name="sex" value="feminine"> Feminine
+						</center>
+        			</div>
+					<div class="col-xs-3"></div>
+
+					<div class="col-xs-2">
+        				<img style="width: 135px;" src="img/sex_masculine.png" class="img-responsive img-radio" >
+						<center>
+							<input type="radio" id="left-item" name="sex" value="masculine"> Masculine
+						</center>
+        			</div>
+
+
+				</div>		
+				
+			
+				<div class="form-group row">
+					<button style="margin-left: 1%" type="submit" class="btn btn-primary">Confirmar cadastro</button>
+				</div>
+                
+			</form>
+	    </div>	
+	</body>
+</html>
