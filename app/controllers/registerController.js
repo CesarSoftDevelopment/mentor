@@ -4,7 +4,7 @@ module.exports.users = function(a, rq, re) {
     re.render('users', {validation: {}, datasForm: {}});
 }
 
-module.exports.registerUSERS = function(application, req, res ) {
+module.exports.registerUSERS = function(application, req, res) {
 
     let datasForm = req.body;
     
@@ -27,4 +27,6 @@ module.exports.registerUSERS = function(application, req, res ) {
     UsersDAO.insertUsers(datasForm);
     alert('Usuário criado com sucesso');
 };
+
+
 
