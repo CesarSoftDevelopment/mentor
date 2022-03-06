@@ -11,4 +11,8 @@ module.exports = function(application) {
         application.app.controllers.mattersController.matters(application, req, res);
     });
 
+    application.post('/savematters', function(req, res){
+        application.app.controllers.mattersController.registerMATTERS(application, req, res);
+    });
+
 };
