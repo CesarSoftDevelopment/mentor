@@ -14,7 +14,6 @@ module.exports.show = function(application, req, res) {
     let MattersDAO = new application.app.models.MattersDAO(connection);
 
     MattersDAO.startView(res, user, sex, {validation: {}});
-    console.log(sex);
 };
 
 module.exports.matters = function(application, req, res) {
