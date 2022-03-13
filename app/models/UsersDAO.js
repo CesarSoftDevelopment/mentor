@@ -12,7 +12,6 @@ UsersDAO.prototype.insertUsers = function(user) {
             collection.insert(user);
             mongoclient.close();
         });
-
     });
 };
 
