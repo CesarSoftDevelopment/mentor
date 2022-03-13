@@ -32,6 +32,7 @@ UsersDAO.prototype.authenticate = function(user, req, res) {
                     req.session.authorized = true;
 
                     req.session.user = result[0].user;
+                    req.session.sex = result[0].sex;
                 };
 
                 if(req.session.authorized) {
@@ -45,18 +46,6 @@ UsersDAO.prototype.authenticate = function(user, req, res) {
         });
     });
 };
-
-
-// UsersDAO.prototype.catchSexPerson = function(res, user, sex) {
-//     this._connection.open(function(err, mongoclient){
-//         mongoclient.collection("users", function(err, collection){
-//             collection.find({user: user}).toArray(function(err, result){
-//                 res.render('jogo', {img_sex: sex});
-//                 mongoclient.close();
-//             });
-//         });
-//     });
-// }
 
 
 module.exports = function() {
