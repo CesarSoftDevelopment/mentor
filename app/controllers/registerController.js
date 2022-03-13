@@ -26,6 +26,7 @@ module.exports.registerUSERS = function(application, req, res) {
 
     UsersDAO.insertUsers(datasForm);
     alert('Usuário criado com sucesso');
+    res.redirect('matters');
 };
 
 
