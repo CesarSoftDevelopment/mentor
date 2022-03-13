@@ -1,5 +1,20 @@
 module.exports.show = function(application, req, res) {
-    res.render('matters', {validation: {}, datasForm: {}});
+
+    	// if user pass by authorized flow
+	if(req.session.authorized !== true) {
+		// send the message that user needs to make login	
+		res.send('User needs to make login');
+		return;
+	}
+
+    let user = req.session.user;
+    let sex = req.session.sex;
+
+    let connection = application.config.dbConnection;
+    let MattersDAO = new application.app.models.MattersDAO(connection);
+
+    MattersDAO.startView(res, user, sex, {validation: {}});
+    console.log(sex);
 };
 
 module.exports.matters = function(application, req, res) {
