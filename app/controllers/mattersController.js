@@ -14,6 +14,7 @@ module.exports.show = function(application, req, res) {
     let MattersDAO = new application.app.models.MattersDAO(connection);
 
     MattersDAO.startView(res, user, sex, {validation: {}});
+
 };
 
 module.exports.matters = function(application, req, res) {
@@ -42,6 +43,8 @@ module.exports.registerMATTERS = function(application, req, res) {
 
     let connection = application.config.dbConnection;
     let MattersDAO = new application.app.models.MattersDAO(connection);
-    MattersDAO.insertMatters(datasForm)
+    datasForm.user = req.session.user;
+    MattersDAO.insertMatters(datasForm);
     res.redirect('matters');
 };
+
