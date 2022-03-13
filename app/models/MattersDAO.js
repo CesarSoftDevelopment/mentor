@@ -24,6 +24,18 @@ MattersDAO.prototype.startView = function(res, user, sex, validation) {
     });
 };
 
+MattersDAO.prototype.mattersView = function(res, matter, validation) {
+    this._connection.open(function(err, mongoclient){
+        mongoclient.collection("matters", function(err, collection){
+            collection.find({matter: matter}).toArray(function(err, result){
+                res.render('matters', {infoMatters: result, validation: validation});
+            });
+            mongoclient.close();
+        });
+    });
+};
+
+
 
 
 module.exports = function() {
