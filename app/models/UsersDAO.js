@@ -32,6 +32,7 @@ UsersDAO.prototype.authenticate = function(user, req, res) {
 
                     req.session.user = result[0].user;
                     req.session.sex = result[0].sex;
+                    req.session.name = result[0].name;
                 };
 
                 if(req.session.authorized) {
